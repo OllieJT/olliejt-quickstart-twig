@@ -1,0 +1,22 @@
+{
+	"name": "scss-testing",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "env NODE_ENV=development gulp",
+		"build": "env NODE_ENV=production gulp",
+		"clean": "gulp clean"
+	},
+	"author": "Ollie Taylor",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-browsersync-inject": "^1.0.1",
+		"gulp-sass": "^4.0.2",
+		"node-sass": "^4.13.1",
+		"browser-sync": "^2.26.7"
+	}
+}

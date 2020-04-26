@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    ".gitignore": true,
+    "package-lock.json": true,
+    "__development": true
+  },
+
+  "[twig]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

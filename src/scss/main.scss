@@ -1,0 +1,13 @@
+$varColor: yellow;
+
+.parent {
+	background: red;
+	color: magenta;
+	.child {
+		background: $varColor;
+		color: black;
+	}
+	&.sibling {
+		background: blue;
+	}
+}
