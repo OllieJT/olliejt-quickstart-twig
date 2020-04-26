@@ -33,8 +33,8 @@ const style = {
 const markup = {
 	src: {
 		dir: folder.src,
-		file: folder.src + "**/*.html",
-		index: folder.src + "index.html",
+		file: folder.src + "**/*.twig",
+		index: folder.src + "index.twig",
 	},
 	dev: {
 		dir: folder.dev,

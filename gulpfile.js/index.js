@@ -1,6 +1,7 @@
 "use strict";
-const { series, src } = require("gulp");
+const { series } = require("gulp");
 const { scssCompile } = require("./scss.js");
+const { markupCompile } = require("./markup.js");
 const { prefix } = require("./prepare.js");
 const { folders } = require("./settings.js");
 const { livereload } = require("./livereload.js");
@@ -15,10 +16,11 @@ function cleanup(cb) {
 }
 
 if (process.env.NODE_ENV === "production") {
-	exports.default = series(scssCompile, prefix);
+	exports.default = series(markupCompile, scssCompile, prefix);
 } else {
-	exports.default = series(scssCompile, livereload);
+	exports.default = series(markupCompile, scssCompile, livereload);
 }
 
 exports.build = prefix;
 exports.clean = cleanup;
+exports.markup = markupCompile;
