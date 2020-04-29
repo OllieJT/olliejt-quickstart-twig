@@ -1,6 +1,7 @@
-@import "./reset";
-@import "./theme";
-@import "../variables";
+@import "./global-reset";
+@import "./global-theme";
+@import "../colors";
+@import "../typography";
 
 html,
 body {
