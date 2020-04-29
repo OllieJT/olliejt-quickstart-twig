@@ -1,8 +1,8 @@
 "use strict";
 const { folders } = require("./settings.js");
-const { compileJs, minifyJs, dirScripts } = require("./toJs.js");
-const { compileScss, dirStyles } = require("./toCss.js");
-const { compileTwig, dirMarkup } = require("./toHtml.js");
+const { compileJs, minifyJs, getStripts } = require("./toJs.js");
+const { compileScss, getStyles } = require("./toCss.js");
+const { compileTwig, getMarkup } = require("./toHtml.js");
 const { browserSync } = require("./settings.js");
 const { watch, series, src, dest } = require("gulp");
 const browserSyncInject = require("gulp-browsersync-inject");
@@ -11,34 +11,34 @@ var del = require("del");
 // TODO: Use gulp-postcss + postcss-cssnext
 
 function syncing(cb) {
-	src(dirMarkup.src.index)
+	src(getMarkup.src.index)
 		.pipe(
 			browserSyncInject({
 				protocol: "http",
 				port: 8080,
 			}),
 		) // BrowserSync will output the proxy port
-		.pipe(dest(dirMarkup.dev.dir));
+		.pipe(dest(getMarkup.dev.dir));
 	cb();
 }
 
 function watching(cb) {
 	browserSync.init({
 		server: {
-			baseDir: dirMarkup.dev.dir,
+			baseDir: getMarkup.dev.dir,
 		},
 		port: 8080,
 		minify: false,
 		cors: true,
 	});
 
-	watch(dirStyles.src.file, series(compileScss));
+	watch(getStyles.src.files, series(compileScss));
 
-	watch(dirScripts.src.file, series(compileJs));
-	watch(dirScripts.dev.file).on("change", browserSync.reload);
+	watch(getStripts.src.files, series(compileJs));
+	watch(getStripts.dev.files).on("change", browserSync.reload);
 
-	watch(dirMarkup.src.file, series(compileTwig));
-	watch(dirMarkup.dev.file).on("change", browserSync.reload);
+	watch(getMarkup.src.files, series(compileTwig));
+	watch(getMarkup.dev.files).on("change", browserSync.reload);
 
 	cb();
 }

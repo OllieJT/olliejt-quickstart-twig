@@ -6,18 +6,18 @@ const autoprefixer = require("gulp-autoprefixer");
 
 sass.compiler = require("node-sass");
 
-const dir = {
+const get = {
 	src: {
 		dir: folders.src + "scss/",
-		file: folders.src + "scss/**/*.scss",
+		files: folders.src + "scss/**/*.scss",
 	},
 	dev: {
 		dir: folders.dev + "css/",
-		file: folders.dev + "css/**/*.css",
+		files: folders.dev + "css/**/*.css",
 	},
 	prod: {
 		dir: folders.prod + "css/",
-		file: folders.prod + "css/**/*.css",
+		files: folders.prod + "css/**/*.css",
 	},
 };
 
@@ -34,7 +34,7 @@ const options = () => {
 			indentType: "tab",
 			indentWidth: 1,
 			omitSourceMapUrl: false,
-			outFile: dir.dev.dir,
+			outfiles: get.dev.dir,
 			outputStyle: "nested",
 			precision: 3,
 			sourceComments: true,
@@ -45,23 +45,23 @@ const options = () => {
 };
 
 function compile(cb) {
-	src(dir.src.file)
+	src(get.src.files)
 		.pipe(options().on("error", sass.logError))
-		.pipe(dest(dir.dev.dir))
+		.pipe(dest(get.dev.dir))
 		.pipe(browserSync.stream());
 	cb();
 }
 
 function prefix(cb) {
-	src(dir.dev.file)
+	src(get.dev.files)
 		.pipe(
 			autoprefixer({
 				cascade: false,
 			}),
 		)
-		.pipe(dest(dir.dev.dir));
+		.pipe(dest(get.dev.dir));
 	cb();
 }
 
 exports.compileScss = series(compile, prefix);
-exports.dirStyles = dir;
+exports.getStyles = get;

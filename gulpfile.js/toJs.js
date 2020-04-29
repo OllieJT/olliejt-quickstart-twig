@@ -7,37 +7,37 @@ var sourcemaps = require("gulp-sourcemaps");
 var babel = require("gulp-babel");
 var concat = require("gulp-concat");
 
-const dir = {
+const get = {
 	src: {
 		dir: folders.src + "js/",
-		file: folders.src + "js/**/*.js",
+		files: folders.src + "js/**/*.js",
 	},
 	dev: {
 		dir: folders.dev,
-		file: folders.dev + "**/*.js",
+		files: folders.dev + "**/*.js",
 	},
 	prod: {
 		dir: folders.prod,
-		file: folders.prod + "**/*.js",
+		files: folders.prod + "**/*.js",
 	},
 };
 
 function compile(cb) {
-	src(dir.src.file)
+	src(get.src.files)
 		.pipe(sourcemaps.init())
 		.pipe(babel())
 		//.pipe(concat("main.js"))
 		.pipe(sourcemaps.write("."))
-		.pipe(dest(dir.dev.dir));
+		.pipe(dest(get.dev.dir));
 	cb();
 }
 
 function minify(cb) {
-	pipeline(src(js.dev.file), uglify(), dest(js.prod.dir));
+	pipeline(src(js.dev.files), uglify(), dest(js.prod.dir));
 	cb();
 }
 
 exports.compileJs = compile;
 exports.minifyJs = minify;
-exports.dirScripts = dir;
-//markup.src.file
+exports.getStripts = get;
+//markup.src.files

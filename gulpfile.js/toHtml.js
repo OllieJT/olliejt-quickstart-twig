@@ -3,20 +3,20 @@ const { dest, src } = require("gulp");
 const twig = require("gulp-twig");
 const { folders } = require("./settings.js");
 
-const dir = {
+const get = {
 	src: {
 		dir: folders.src,
-		file: folders.src + "**/*.twig",
+		files: folders.src + "**/*.twig",
 		index: folders.src + "index.twig",
 	},
 	dev: {
 		dir: folders.dev,
-		file: folders.dev + "**/*.html",
+		files: folders.dev + "**/*.html",
 		index: folders.dev + "index.html",
 	},
 	prod: {
 		dir: folders.prod,
-		file: folders.prod + "**/*.html",
+		files: folders.prod + "**/*.html",
 		index: folders.prod + "index.html",
 	},
 };
@@ -27,17 +27,17 @@ function compile(cb) {
 		benefits: ["Fast", "Flexible", "Secure"],
 	};
 
-	src(dir.src.file)
+	src(get.src.files)
 		.pipe(
 			twig({
 				data: localData,
-				base: dir.src.dir + "layouts/",
+				base: get.src.dir + "layouts/",
 				errorLogToConsole: true,
 			}),
 		)
-		.pipe(dest(dir.dev.dir));
+		.pipe(dest(get.dev.dir));
 	cb();
 }
 
 exports.compileTwig = compile;
-exports.dirMarkup = dir;
+exports.getMarkup = get;
