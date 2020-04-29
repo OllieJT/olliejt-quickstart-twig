@@ -1,0 +1,22 @@
+// Typography
+$fontFamily: var(--font-family);
+
+$fontLineContent: var(--font-height-content);
+$fontLineHeadline: var(--font-height-headline);
+$fontLineLabel: var(--font-height-label);
+$fontLineSubtitleBig: var(--font-height-subtitle-big);
+$fontLineSubtitleSmall: var(--font-height-subtitle-small);
+$fontLineTitleBig: var(--font-height-title-big);
+$fontLineTitleSmall: var(--font-height-title-small);
+
+$fontSizeContent: var(--font-size-content);
+$fontSizeHeadline: var(--font-size-headline);
+$fontSizeLabel: var(--font-size-label);
+$fontSizeSubtitleBig: var(--font-size-subtitle-big);
+$fontSizeSubtitleSmall: var(--font-size-subtitle-small);
+$fontSizeTitleBig: var(--font-size-title-big);
+$fontSizeTitleSmall: var(--font-size-title-small);
+
+$fontWeightBold: var(--font-weight-bold);
+$fontWeightDefault: var(--font-weight-regular);
+$fontWeightMedium: var(--font-weight-medium);

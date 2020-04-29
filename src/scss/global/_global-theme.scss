@@ -1,0 +1,147 @@
+:root {
+	--color-mono-8: hsl(225, 0%, 100%);
+	--color-mono-7: hsl(230, 8%, 80%);
+	--color-mono-6: hsl(230, 12%, 60%);
+
+	--color-mono-5: hsl(230, 5%, 70%);
+	--color-mono-4: hsl(230, 5%, 55%);
+	--color-mono-3: hsl(230, 10%, 30%);
+	--color-mono-2: hsl(230, 10%, 20%);
+	--color-mono-1: hsl(230, 10%, 8%);
+	--color-mono-0: hsl(230, 10%, 2%);
+
+	--color-mono-7-mask: hsla(230, 20%, 90%, 0.2);
+	--color-mono-1-mask: hsla(230, 30%, 12%, 0.2);
+
+	--color-primary-dark: hsl(230, 50%, 30%);
+	--color-primary-medium: hsl(230, 60%, 60%);
+	--color-primary-light: hsl(225, 100%, 80%);
+	--color-primary-mask: hsla(230, 60%, 60%, 0.2);
+
+	--color-red-dark: hsl(340, 100%, 10%);
+	--color-red-medium: hsl(350, 100%, 55%);
+	--color-red-light: hsl(350, 75%, 85%);
+	--color-red-mask: hsla(340, 100%, 55%, 0.15);
+
+	--color-marine-dark: hsl(215, 60%, 15%);
+	--color-marine-medium: hsl(210, 70%, 60%);
+	--color-marine-light: hsl(215, 100%, 85%);
+	--color-marine-mask: hsla(215, 100%, 45%, 0.15);
+
+	--color-green-dark: hsl(170, 100%, 10%);
+	--color-green-medium: hsl(160, 100%, 45%);
+	--color-green-light: hsl(160, 74%, 85%);
+	--color-green-mask: hsla(160, 100%, 45%, 0.15);
+
+	--color-yellow-dark: hsl(40, 100%, 10%);
+	--color-yellow-medium: hsl(50, 100%, 45%);
+	--color-yellow-light: hsl(55, 74%, 85%);
+	--color-yellow-mask: hsla(50, 100%, 45%, 0.2);
+
+	--color-content-high: var(--color-mono-8);
+	--color-content-middle: var(--color-mono-7);
+	--color-content-low: var(--color-mono-6);
+
+	--color-level-higher: var(--color-mono-5);
+	--color-level-high: var(--color-mono-4);
+	--color-level-middle: var(--color-mono-3);
+	--color-level-low: var(--color-mono-2);
+	--color-level-lower: var(--color-mono-1);
+	--color-level-bottom: var(--color-mono-0);
+	--color-level-mask: var(--color-mono-7-mask);
+
+	--color-error-dark: var(--color-red-dark);
+	--color-error-medium: var(--color-red-medium);
+	--color-error-light: var(--color-red-light);
+	--color-error-mask: var(--color-red-mask);
+
+	--color-info-dark: var(--color-marine-dark);
+	--color-info-medium: var(--color-marine-medium);
+	--color-info-light: var(--color-marine-light);
+	--color-info-mask: var(--color-marine-mask);
+
+	--color-success-dark: var(--color-green-dark);
+	--color-success-medium: var(--color-green-medium);
+	--color-success-light: var(--color-green-light);
+	--color-success-mask: var(--color-green-mask);
+
+	--color-alert-dark: var(--color-yellow-dark);
+	--color-alert-medium: var(--color-yellow-medium);
+	--color-alert-light: var(--color-yellow-light);
+	--color-alert-mask: var(--color-yellow-mask);
+
+	--font-family: Tomorrow;
+
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 600;
+
+	--font-size-title-big: 4.8rem;
+	--font-height-title-big: 5.6rem;
+
+	--font-size-title-small: 3.2rem;
+	--font-height-title-small: 4rem;
+
+	--font-size-subtitle-big: 3.2rem;
+	--font-height-subtitle-big: 4rem;
+
+	--font-size-subtitle-small: 2.4rem;
+	--font-height-subtitle-small: 3.2rem;
+
+	--font-size-headline: 2rem;
+	--font-height-headline: 3.2rem;
+
+	--font-size-label: 1.2rem;
+	--font-height-label: 2.4rem;
+
+	--font-size-content: 2rem;
+	--font-height-content: 3.2rem;
+
+	@media (max-width: 700px) {
+		/* Heading 1 */
+		--font-size-title-big: 4rem;
+		--font-height-title-big: 4.8rem;
+
+		/* Heading 2 */
+		--font-size-title-small: 3.6rem;
+		--font-height-title-small: 4.4rem;
+
+		/* Heading 3 */
+		--font-size-subtitle-big: 2.8rem;
+		--font-height-subtitle-big: 3.6rem;
+
+		/* Heading 4 */
+		--font-size-subtitle-small: 2.2rem;
+		--font-height-subtitle-small: 3.2rem;
+
+		/* Heading 5 */
+		--font-size-headline: 1.8rem;
+		--font-height-headline: 3.2rem;
+
+		/* Heading 6 */
+		--font-size-label: 1.2rem;
+		--font-height-label: 2.4rem;
+
+		/* Paragraph */
+		--font-size-content: 1.8rem;
+		--font-height-content: 3.2rem;
+	}
+
+	--size-container-main: 120rem;
+	--size-container-content: 88rem;
+
+	--size-container-gutter: 0.8rem;
+
+	--size-space-smallest: 0.8rem;
+	--size-space-small: 1.6rem;
+	--size-space-medium: 2.4rem;
+	--size-space-large: 4rem;
+	--size-space-largest: 8rem;
+
+	--radius-small: 0.4rem;
+	--radius-medium: 1.2rem;
+	--radius-large: 8rem;
+
+	--transition-primary: cubic-bezier(0, 1, 0.75, 1); // Punchy
+	--transition-secondary: cubic-bezier(0.5, 2, 0.5, 0.75); // Bouncy
+}

@@ -1,0 +1,262 @@
+@import "./reset";
+@import "./theme";
+@import "../variables";
+
+html,
+body {
+	width: 100%;
+	max-width: 100vw;
+}
+
+html {
+	font-size: 62.5% !important;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	font-family: $fontFamily, -apple-system, BlinkMacSystemFont, sans-serif;
+	font-style: normal;
+	font-weight: $fontWeightDefault;
+	line-height: 1em;
+	height: auto;
+	min-height: 100vh;
+	background-color: $colorLevelLower;
+	color: $colorContentMiddle;
+	position: relative;
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	color: $colorPrimaryMiddle;
+	transition: color 0.16s ease-out;
+
+	&:hover,
+	&:focus {
+		color: $colorPrimaryHigh;
+	}
+}
+
+h1 {
+	font-weight: $fontWeightBold;
+	font-size: $fontSizeTitleBig;
+}
+h2 {
+	font-weight: $fontWeightBold;
+	font-size: $fontSizeTitleSmall;
+}
+h3 {
+	font-weight: $fontWeightMedium;
+	font-size: $fontSizeSubtitleBig;
+}
+h4 {
+	font-weight: $fontWeightMedium;
+	font-size: $fontSizeSubtitleSmall;
+}
+h5 {
+	font-weight: $fontWeightBold;
+	font-size: $fontSizeHeadline;
+}
+h6 {
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-weight: $fontWeightBold;
+	font-size: $fontSizeLabel;
+}
+p,
+ol,
+ul {
+	font-weight: $fontWeightDefault;
+	font-size: $fontSizeContent;
+}
+
+iframe,
+figure,
+img,
+blockquote {
+	display: block;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	img {
+		width: auto;
+		margin: 0 auto;
+	}
+}
+
+blockquote.blockquote {
+	width: 100%;
+	max-width: var(--size-container-content);
+	margin: var(--size-space-large) auto;
+	padding: var(--size-space-small) var(--size-space-medium);
+	background-color: $colorPrimaryMask;
+	border: 1px solid $colorPrimaryLow;
+	color: $colorPrimaryHigh;
+	border-radius: var(--radius-small);
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		color: $colorPrimaryHigh;
+	}
+	em {
+		color: $colorContentHigh;
+	}
+}
+
+ul,
+ol,
+li {
+	list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	color: $colorContentHigh;
+	line-height: 1em;
+	margin-top: 0;
+	margin-bottom: 0;
+
+	svg {
+		font-size: 1.25em;
+		margin: auto 0;
+	}
+
+	strong,
+	b {
+		font-weight: $fontWeightMedium;
+	}
+
+	sub,
+	sup,
+	small {
+		//. Specified in % so that the sup/sup is the right size relative to the surrounding text
+		font-size: 75%;
+
+		// Zero out the line-height so that it doesn't interfere with the positioning that follows */
+		line-height: 0;
+
+		// Where the magic happens: makes all browsers position the sup/sup properly, relative to the surrounding text */
+		position: relative;
+
+		// Note that if you're using Eric Meyer's reset.css, this is already set and you can remove this rule
+		vertical-align: baseline;
+	}
+	sub {
+		// Move the subscripted text down, but only half as far down as the superscript moved up
+		bottom: -0.25em;
+	}
+	sup {
+		// Move the superscripted text up
+		top: -0.5em;
+	}
+	small {
+		font-size: 85%;
+	}
+
+	mark {
+		color: $colorPrimaryHigh;
+		background-color: $colorPrimaryLow;
+	}
+	code {
+		font-style: italic;
+		color: $colorContentHigh;
+		background-color: $colorLevelLow;
+		padding: 0 0.2em;
+		font-size: 0.8em;
+		line-height: 1em;
+		padding: 0.3em;
+		border-radius: 0.25em;
+		font-weight: $fontWeightMedium;
+	}
+
+	em {
+		color: $colorPrimaryHigh;
+	}
+	u {
+		text-decoration: underline;
+	}
+	i {
+		font-style: italic;
+	}
+
+	&.title-big,
+	&.title-small,
+	&.subtitle-big,
+	&.subtitle-small,
+	&.headline,
+	&.label,
+	&.content {
+		max-width: var(--size-container-content);
+		margin: 0.5em auto;
+		a {
+			display: inline;
+			text-decoration: underline;
+		}
+	}
+	&.title-small,
+	&.subtitle-big,
+	&.subtitle-small,
+	&.headline {
+		margin-top: 2em;
+		&:first {
+			margin-top: 0;
+		}
+	}
+
+	&.title-big {
+		font-weight: $fontWeightBold;
+		font-size: $fontSizeTitleBig;
+		line-height: $fontLineTitleBig;
+		color: $colorContentHigh;
+	}
+	&.title-small {
+		font-weight: $fontWeightBold;
+		font-size: $fontSizeTitleSmall;
+		line-height: $fontLineTitleSmall;
+		color: $colorContentHigh;
+	}
+	&.subtitle-big {
+		font-weight: $fontWeightDefault;
+		font-size: $fontSizeSubtitleBig;
+		line-height: $fontLineSubtitleBig;
+		color: $colorContentHigh;
+	}
+	&.subtitle-small {
+		font-weight: $fontWeightDefault;
+		font-size: $fontSizeSubtitleSmall;
+		line-height: $fontLineSubtitleSmall;
+		color: $colorContentHigh;
+	}
+	&.headline {
+		font-weight: $fontWeightMedium;
+		font-size: $fontSizeHeadline;
+		line-height: $fontLineHeadline;
+		color: $colorContentHigh;
+	}
+	&.label {
+		font-weight: $fontWeightBold;
+		font-size: $fontSizeLabel;
+		line-height: $fontLineLabel;
+		color: $colorContentLow;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+	}
+	&.content {
+		font-weight: $fontWeightDefault;
+		font-size: $fontSizeContent;
+		line-height: $fontLineContent;
+		color: $colorContentMiddle;
+	}
+}
