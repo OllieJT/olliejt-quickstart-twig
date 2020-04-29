@@ -1,19 +1,5 @@
 {
   "presets": [
-
-    ,
-      {
-        "useBuiltIns": "entry"
-      }
-
-
-    "@babel/preset-es2016"]
-
-}
-
-
-{
-  "presets": [
     [
       "@babel/preset-env",
       {
